@@ -1,31 +1,20 @@
+import lombok.*;
+
+@Data
 public class Target {
 
-    String name;
-    Immunity immunity;
-    int damageTaken;
+    private String name;
+    private Immunity immunity;
+    private int damageTaken;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    public Target(String name, Immunity immunity) {
         this.name = name;
-    }
-
-    public Immunity getImmunity() {
-        return immunity;
-    }
-
-    public void setImmunity(Immunity immunity) {
         this.immunity = immunity;
+        this.damageTaken = 0;
     }
 
-    public int getDamageTaken() {
-        return damageTaken;
-    }
-
-    public void setDamageTaken(int damageTaken) {
-        this.damageTaken = damageTaken;
+    public void setDamageTaken(int Damage) {
+        this.damageTaken += Damage;
     }
 
     public void hit(Weapon weapon) {
